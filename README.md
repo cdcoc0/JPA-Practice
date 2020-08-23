@@ -1,2 +1,2 @@
 # jpaPractice
-A repository for practice developing boards using jpa
+practices developing boards using jpa
