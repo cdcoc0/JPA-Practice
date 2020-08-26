@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.kiri.chop.basetime.BaseTimeEntity;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 //기본 생성자 생성
 @Entity
-public class GiftEntity {
+public class ListEntity extends BaseTimeEntity{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,13 +55,14 @@ public class GiftEntity {
 	@Builder
 	//빌더 패턴 클래스 생성
 	//필드 값 변경의 목적과 의도를 명확히 하기 위함
-	public GiftEntity(String giftName, String giftBrand, String giftCategory, String giftPrice, 
-			int giftSold) {
+	public ListEntity(String giftName, String giftBrand, String giftCategory, String giftPrice, 
+			int giftSold, String giftContent) {
 		this.giftName = giftName;
 		this.giftBrand = giftBrand;
 		this.giftCategory = giftCategory;
 		this.giftPrice = giftPrice;
 		this.giftSold = giftSold;
+		this.giftContent = giftContent;
 	}
 	
 	//엔티티 영속성
@@ -68,4 +71,14 @@ public class GiftEntity {
 		//this.title = title;
 		//this.content = content;
 	//}
+	
+	public void update(String giftName, String giftBrand, String giftCategory, String giftPrice, 
+			int giftSold, String giftContent) {
+		this.giftName = giftName;
+		this.giftBrand = giftBrand;
+		this.giftCategory = giftCategory;
+		this.giftPrice = giftPrice;
+		this.giftSold = giftSold;
+		this.giftContent = giftContent;
+	}
 }
