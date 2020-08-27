@@ -46,7 +46,6 @@ public class ListEntity extends BaseTimeEntity{
 	//private String giftImg;
 	//content
 	
-	@Column(nullable = false)
 	private int giftSold;
 	
 	private String giftContent;

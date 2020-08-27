@@ -1,5 +1,5 @@
 {{>layout/header}}
-    
+
  <!--? Hero Start -->
        <!--? Hero Area Start-->
     <div class="slider-area hero-bg3 hero-overly">
@@ -20,12 +20,6 @@
                                     </div>
                                   </div>
                                 </div>
-                             <div class="col-xl-4">
-                               <div class="double-btn f-right  d-flex flex-wrap">
-                                  <a href="#" role="button" id="btn-save" class="border-btn w-btn wantToWork-btn mr-20"><i class="fas fa-globe"></i>등록</a>
-                                  <a href="/gift/list" role="button" class="btn w-btn wantToWork-btn"><i class="fas fa-phone"></i>취소</a>
-                               </div>
-                             </div>
                             </div>
                         </div>
                     </section>
@@ -37,45 +31,57 @@
     <div class="directory-details pt-padding">
         <div class="container">
             <div class="row">
+                
                 <div class="col-lg-8">
-                 <div class="blog_details">
-                        <h2 style="color: #2d2d2d;">Second divided from form fish beast made every of seas
-                           all gathered us saying he our
-                        </h2>
-                        <ul class="blog-info-link mt-3 mb-4">
-                           <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                           <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                        </ul>
-                 </div>
-                 <div>
-                 <hr/>
-                 </div>
                     <div class="small-tittle mb-20">
-                        <h2>Description</h2>
+                        <h2>상품 등록</h2>
                     </div>
-                    <div class="directory-cap mb-40">
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
-                    </div>
-                    <div class="small-tittle mb-20">
-                        <h2>Description</h2>
-                    </div>
-                    <div class="gallery-img">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <img src="/assets/img/gallery/gallery1.png" class="mb-30" alt="">
-                            </div>
-                            <div class="col-lg-6">
-                                <img src="/assets/img/gallery/gallery2.png" class="mb-30" alt="">
-                            </div>
-                            <div class="col-lg-6">
-                                <img src="/assets/img/gallery/gallery3.png"  class="mb-30"alt="">
-                            </div>
-                            <div class="col-lg-6">
-                                <img src="/assets/img/gallery/gallery4.png"  class="mb-30"alt="">
-                            </div>
-                        </div>
-                    </div>
+                    <div class="comment-form">
+                    <form>
+                    <div class="mt-10">
+									<input type="text" name="giftName" id="giftName" placeholder="상품명"
+										onfocus="this.placeholder = ''" onblur="this.placeholder = '상품명'" required
+										class="single-input-accent">
+								</div>
+					<div class="mt-10">
+									<input type="text" name="giftBrand" id="giftBrand" placeholder="브랜드"
+										onfocus="this.placeholder = ''" onblur="this.placeholder = '브랜드'" required
+										class="single-input-accent">
+								</div>
+                    <div class="input-group-icon mt-10">
+						<div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+						<div class="form-select" id="default-select"">
+						<select name="giftCategory" id="giftCategory">
+							<option value=" 0">-카테고리-</option>
+							<option value="1">1. 한식</option>
+							<option value="2">2. 중식</option>
+							<option value="3">3. 일식</option>
+							<option value="4">4. 양식</option>
+							<option value="5">5. 베이커리</option>
+							<option value="6">6. 카페</option>
+							<option value="7">7. 기타</option>
+						</select>
+						</div>
+					</div>
+				<div class="mt-10">
+					<input type="text" name="giftPrice" id="giftPrice" placeholder="가격"
+					onfocus="this.placeholder = ''" onblur="this.placeholder = '가격'" required
+					class="single-input-accent">
+				</div>
+				<div class="input-group-icon mt-10">
+				<div class="form-group">
+                   <textarea class="form-control w-100" name="giftContent" id="giftContent" cols="30" rows="30"
+                    placeholder="Contents"></textarea>
                 </div>
+                   </div>
+                   </form>
+                    <div class="form-group">
+                           <button type="button" id="btn-save" class="button button-contactForm btn_1 boxed-btn">submit</button>
+                           <button type="button" onclick="location.href='/gift/list'" class="button button-contactForm btn_1 boxed-btn">prev</button>
+                        </div>            
+                  </div>
+                </div>
+                
                 <div class="col-lg-4">
                   <div class="blog_right_sidebar">
                      <aside class="single_sidebar_widget search_widget">

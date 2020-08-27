@@ -14,17 +14,15 @@ public class ListSaveRequestDto {
 	private String giftBrand;
 	private String giftCategory;
 	private String giftPrice;
-	private int giftSold;
 	private String giftContent;
 	
 	@Builder
 	public ListSaveRequestDto(String giftName, String giftBrand, String giftCategory, 
-			String giftPrice, int giftSold, String giftContent) {
+			String giftPrice, String giftContent) {
 		this.giftName = giftName;
 		this.giftBrand = giftBrand;
 		this.giftCategory = giftCategory;
 		this.giftPrice = giftPrice;
-		this.giftSold = giftSold;
 		this.giftContent = giftContent;
 	}
 	
@@ -34,7 +32,6 @@ public class ListSaveRequestDto {
 				.giftBrand(giftBrand)
 				.giftCategory(giftCategory)
 				.giftPrice(giftPrice)
-				.giftSold(giftSold)
 				.giftContent(giftContent)
 				.build();
 	}

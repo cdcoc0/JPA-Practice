@@ -47,7 +47,6 @@ public class ListApiControllerTest {
 		String giftBrand = "brand";
 		String giftCategory = "category";
 		String giftPrice = "price";
-		int giftSold = 30;
 		String giftContent = "content";
 		
 		ListSaveRequestDto requestDto = ListSaveRequestDto.builder()
@@ -55,7 +54,6 @@ public class ListApiControllerTest {
 				.giftBrand(giftBrand)
 				.giftCategory(giftCategory)
 				.giftPrice(giftPrice)
-				.giftSold(giftSold)
 				.giftContent(giftContent)
 				.build();
 		
@@ -74,7 +72,6 @@ public class ListApiControllerTest {
 		assertThat(all.get(0).getGiftBrand()).isEqualTo(giftBrand);
 		assertThat(all.get(0).getGiftCategory()).isEqualTo(giftCategory);
 		assertThat(all.get(0).getGiftPrice()).isEqualTo(giftPrice);
-		assertThat(all.get(0).getGiftSold()).isEqualTo(giftSold);
 		assertThat(all.get(0).getGiftContent()).isEqualTo(giftContent);
 		
 	}
