@@ -10,4 +10,19 @@ public class ListController {
 	public String index() {
 		return "index";
 	}
+	
+	@GetMapping("/gift/list")
+	public String giftList() {
+		return "listing";
+	}
+	
+	@GetMapping("/gift/detail")
+	public String giftDetail() {
+		return "listDetail";
+	}
+	
+	@GetMapping("/gift/write")
+	public String giftWrite() {
+		return "listWrite";
+	}
 }
