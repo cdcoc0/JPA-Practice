@@ -1,5 +1,6 @@
 package com.kiri.chop.controller;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,14 +26,24 @@ public class ListApiController {
 	public Long save(@RequestBody ListSaveRequestDto requestDto) {
 		return listService.save(requestDto);
 	}
+	//글 입력
 	
 	@PutMapping("/api/v1/gift/{giftId}")
 	public Long update(@PathVariable Long giftId, @RequestBody ListUpdateRequestDto requestDto) {
 		return listService.update(giftId, requestDto);
 	}
+	//수정
 	
-	@GetMapping("/api/v1/gift/{id}")
+	@GetMapping("/api/v1/gift/{giftId}")
 	public ListResponseDto findById(@PathVariable Long giftId) {
 		return listService.findById(giftId);
+	}
+	//조회
+	
+	@DeleteMapping("/api/v1/gift/{giftId}")
+	public Long delete(@PathVariable Long giftId) {
+		listService.delete(giftId);
+		
+		return giftId;
 	}
 }

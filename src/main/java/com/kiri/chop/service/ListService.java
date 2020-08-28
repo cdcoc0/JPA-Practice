@@ -1,10 +1,14 @@
 package com.kiri.chop.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kiri.chop.domain.ListEntity;
 import com.kiri.chop.domain.ListRepository;
+import com.kiri.chop.dto.ListAllResponseDto;
 import com.kiri.chop.dto.ListResponseDto;
 import com.kiri.chop.dto.ListSaveRequestDto;
 import com.kiri.chop.dto.ListUpdateRequestDto;
@@ -21,6 +25,7 @@ public class ListService {
 	public Long save(ListSaveRequestDto requestDto) {
 		return listRepository.save(requestDto.toEntity()).getGiftId();
 	}
+	//등록
 	
 	@Transactional
 	public Long update(Long giftId, ListUpdateRequestDto requestDto) {
@@ -34,6 +39,7 @@ public class ListService {
 		
 		return giftId;
 	}
+	//수정
 	
 	@Transactional
 	public ListResponseDto findById(Long id) {
@@ -42,5 +48,22 @@ public class ListService {
 						IllegalArgumentException("해당 게시글이 없습니다 id = " + id));
 		
 		return new ListResponseDto(listEntity);
+	}
+	//조회
+	
+	@Transactional(readOnly = true)
+	public List<ListAllResponseDto> findAllDesc() {
+		return listRepository.findAllDesc().stream()
+				.map(ListAllResponseDto::new)
+				.collect(Collectors.toList());
+	}
+	
+	@Transactional
+	public void delete(Long giftId) {
+		ListEntity listEntity = listRepository.findById(giftId)
+				.orElseThrow(() -> new 
+						IllegalArgumentException("해당 게시글이 없습니다. id = " + giftId));
+		
+		listRepository.delete(listEntity);
 	}
 }
