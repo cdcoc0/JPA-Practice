@@ -1,1 +1,0 @@
-# jpaPractice
